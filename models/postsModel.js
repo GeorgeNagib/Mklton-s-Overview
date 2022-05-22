@@ -15,10 +15,10 @@ const postSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    creator: {
-        type: mongoose.Schema.ObjectId,
-        // ref: 'userInfo'
-    }
+    // creator: {
+    //     type: mongoose.Schema.ObjectId,
+    //     // ref: 'userInfo'
+    // }
 },
     {
         toJSON: { virtuals: true },

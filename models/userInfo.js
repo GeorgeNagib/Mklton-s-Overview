@@ -29,7 +29,7 @@ const userInfoSchema = mongoose.Schema({
         required: [true, "Enter your instagram account link."],
         validate: [validator.isURL, "Please provide your instagram account link. "]
     },
-    authenticationKey: {
+    password: {
         type: String,
         default: new123
     }
@@ -41,6 +41,16 @@ const userInfoSchema = mongoose.Schema({
         toObject: { virtuals: true },
     }
 )
+
+userInfoSchema.pre("save", async function () {
+    if (this.isModified('password') || this.isNew) {
+        this.password = await bcrypt.hash(this.password, 12)
+    }
+})
+
+userInfoSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
+    return await bcrypt.compare(candidatePassword, userPassword);
+}
 
 const UserInfo = mongoose.model("UserInfo", userInfoSchema)
 

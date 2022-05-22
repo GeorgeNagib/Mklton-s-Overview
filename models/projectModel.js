@@ -11,10 +11,10 @@ const projectSchema = new mongoose.Schema({
         trim: true,
         required: [true, "Tell us more about this project."]
     },
-    creator: {
-        type: mongoose.Schema.ObjectId,
-        // ref: 'userInfo'
-    }
+    // creator: {
+    //     type: mongoose.Schema.ObjectId,
+    //     // ref: 'userInfo'
+    // }
 },
     {
         timestamps: true
