@@ -1,0 +1,273 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.list-unstyled {
+  padding: 0;
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+/* for the parent of the cards */
+.pd-2-r {
+  padding-right: 2rem;
+}
+
+.nav .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 0;
+}
+.nav .item .item__link:-webkit-any-link {
+  text-decoration: none;
+  color: #a4a4a4;
+  font-size: 1.6rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.nav .item .item__link:-webkit-any-link:hover {
+  color: #e8e8e8;
+}
+.nav .item .item__link:-moz-any-link {
+  text-decoration: none;
+  color: #a4a4a4;
+  font-size: 1.6rem;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.nav .item .item__link:-moz-any-link:hover {
+  color: #e8e8e8;
+}
+.nav .item .item__link:any-link {
+  text-decoration: none;
+  color: #a4a4a4;
+  font-size: 1.6rem;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.nav .item .item__link:any-link:hover {
+  color: #e8e8e8;
+}
+
+.nav .item .item__link-active {
+  color: #e8e8e8 !important;
+}
+
+.title {
+  color: #e8e8e8;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.title span {
+  font-weight: 300;
+  font-size: 2.4rem;
+}
+
+.title h1 {
+  font-weight: 700;
+  font-size: 6.4rem;
+}
+
+.title-heading-2 {
+  color: #e8e8e8;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 9.6rem;
+}
+
+.card {
+  background: rgba(16, 16, 16, 0.91);
+  box-shadow: 6px 0px 72px 11px rgba(196, 196, 196, 0.06);
+  margin-bottom: 4rem;
+  color: #e8e8e8;
+  padding: 2.4rem 3.2rem;
+  max-width: 95rem;
+  margin-inline: auto;
+}
+
+.card .card__title {
+  margin-bottom: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.card .card__title .card__heading {
+  font-size: 2rem;
+}
+
+.card .card__title .card__date {
+  font-size: 1.2rem;
+}
+
+.card .card__description {
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* for the show only on the actual page there is no need for this */
+  margin-bottom: 3rem;
+}
+
+.button .button__arrows {
+  display: flex;
+  align-items: center;
+  gap: 12rem;
+  margin-bottom: 2rem;
+}
+
+.button .button__link a:-webkit-any-link {
+  color: #e8e8e8;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-right: 0.6rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button .button__link a:-moz-any-link {
+  color: #e8e8e8;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-right: 0.6rem;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button .button__link a:any-link {
+  color: #e8e8e8;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-right: 0.6rem;
+  transition: all 0.3s;
+}
+
+.button__next {
+  transition: all 0.3s;
+}
+
+.button .button__link:hover .button__next {
+  margin-left: 1rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+html body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  position: relative;
+  background: url("../../images/Rectangle.png"), linear-gradient(112.93deg, rgba(0, 0, 0, 0.7) 0%, #060606 98.66%), rgba(255, 255, 255, 0.3);
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  z-index: -1;
+  right: 1px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 116rem;
+  margin-inline: auto;
+}
+
+.header {
+  padding: 8rem 0;
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  position: relative;
+}
+.header__person-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 14.3rem;
+}
+.header__person .profile {
+  width: 26.1rem;
+  height: 26.1rem;
+  border-radius: 50%;
+}
+.header .shape-1 svg {
+  position: absolute;
+  width: 320px;
+  height: 266.81px;
+  right: -5rem;
+  top: -12.4rem;
+  z-index: -2;
+}
+
+.projects {
+  padding-top: 3rem;
+  position: relative;
+}
+.projects .shape svg {
+  position: absolute;
+  width: 325px !important;
+  z-index: -2;
+}
+.projects .shape-2 svg {
+  left: 2.4rem;
+  top: -4rem;
+}
+.projects .shape-3 svg {
+  right: 2.4rem;
+  top: 24rem;
+}
+.projects .shape-4 svg {
+  left: 1.4rem;
+  bottom: -9rem;
+}
+
+footer {
+  padding: 4rem 0;
+}
+
+/*# sourceMappingURL=main.css.map */
