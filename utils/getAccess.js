@@ -3,11 +3,12 @@ const catchAsync = require('./catchAsync')
 const AppError = require('./appError')
 exports.protected = catchAsync(async (req, res, next) => {
     let passwordSent
-    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer') && req.headers.authorization.split(' ')[1]) {
         passwordSent = req.headers.authorization.split(' ')[1]
-        const user = await UserInfo.find()
-
-        if (await user[0].correctPassword(passwordSent, user[0].password)) {
+        
+        const user = await UserInfo.findOne()
+        
+        if (await user.correctPassword(passwordSent, user.password)) {
             return next()
         } else {
             return next(new AppError("The password is wrong, you are not authorized", 403))

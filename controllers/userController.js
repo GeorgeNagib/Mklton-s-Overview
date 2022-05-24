@@ -1,25 +1,27 @@
 const userInfo = require('../models/userInfo')
 const catchAsync = require('../utils/catchAsync')
 const AppError = require('../utils/appError')
+const UserInfo = require('../models/userInfo')
 
 exports.updateUser = catchAsync(async (req, res, next) => {
-    const updatedUser = await userInfo.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-        runValidators: true
-    })
-    if (req.body.password) {
-        updatedUser.password = req.body.password
-        await updatedUser.save()
+    let user = await UserInfo.findOne()
+    for(let propertyName in req.body) {
+        user[propertyName] = req.body[propertyName]
     }
+
+
+    await user.save()
+
     res.status(200).json({
         status: 'success',
         data: {
-            user: updatedUser
+            user: user
         }
     })
 })
+
 exports.getUser = catchAsync(async (req, res, next) => {
-    const user = await userInfo.findById(req.params.id)
+    const user = await userInfo.findOne({}).select('-password')
 
     res.status(200).json({
         status: 'success',
