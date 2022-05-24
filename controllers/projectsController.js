@@ -4,12 +4,15 @@ const AppError = require('../utils/appError')
 
 exports.getAllProjects = catchAsync(async (req, res, next) => {
     const limited = req.query.limit * 1 || 4
-    const projects = await Project.find().limit(limited)
+
+    const projects = await Project.find()
+    const sentProjects = await Project.find().limit(limited)
 
     res.status(200).json({
         status: 'success',
-        results: projects.length,
-        projects
+        allProjectsLength: projects.length,
+        results: sentProjects.length,
+        projects: { sentProjects }
     })
 })
 
