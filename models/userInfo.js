@@ -31,7 +31,12 @@ const userInfoSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        default: new123
+        required: [true, "put your password"],
+        minlength: 8
+    },
+    title: {
+        type: String,
+        required: [true, "Please tell us your position"]
     }
 }, {
     timestamps: true
@@ -42,12 +47,16 @@ const userInfoSchema = mongoose.Schema({
     }
 )
 
-userInfoSchema.pre("save", async function () {
+userInfoSchema.pre('save', async function (next) {
+    //  Only run this function if password was actually modified-
     if (this.isModified('password') || this.isNew) {
-        this.password = await bcrypt.hash(this.password, 12)
+        return next();
     }
-})
+    // Hash the password with cost of 12 
+    this.password = await bcrypt.hash(this.password, 12);
 
+    next()
+})
 userInfoSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
     return await bcrypt.compare(candidatePassword, userPassword);
 }
