@@ -193,7 +193,11 @@ html body {
   font-size: 1.6rem;
   font-weight: 400;
   position: relative;
+<<<<<<< HEAD
   background: linear-gradient(112.93deg, rgba(0, 0, 0, 0.7) 0%, #060606 98.66%), rgba(255, 255, 255, 0.3);
+=======
+  background: url("../images/Rectangle.png"), linear-gradient(112.93deg, rgba(0, 0, 0, 0.7) 0%, #060606 98.66%), rgba(255, 255, 255, 0.3);
+>>>>>>> 964d145035925e2c0746f62e79b64d3459edb811
   background-repeat: no-repeat;
 }
 
