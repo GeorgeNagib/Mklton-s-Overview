@@ -42,6 +42,10 @@ img {
   margin-bottom: 4rem !important;
 }
 
+.pd-b-2 {
+  padding-bottom: 2rem !important;
+}
+
 .nav .item {
   display: flex;
   justify-content: space-between;
@@ -69,34 +73,12 @@ img {
 .nav .item .item__link:-moz-any-link:hover {
   color: #e8e8e8;
 }
-.nav .item .item__link:-webkit-any-link {
-  text-decoration: none;
-  color: #a4a4a4;
-  font-size: 1.6rem;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-transform: uppercase;
-}
-.nav .item .item__link:-moz-any-link {
-  text-decoration: none;
-  color: #a4a4a4;
-  font-size: 1.6rem;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  text-transform: uppercase;
-}
 .nav .item .item__link:any-link {
   text-decoration: none;
   color: #a4a4a4;
   font-size: 1.6rem;
   transition: all 0.3s;
   text-transform: uppercase;
-}
-.nav .item .item__link:-webkit-any-link:hover {
-  color: #e8e8e8;
-}
-.nav .item .item__link:-moz-any-link:hover {
-  color: #e8e8e8;
 }
 .nav .item .item__link:any-link:hover {
   color: #e8e8e8;
@@ -223,12 +205,11 @@ html {
   font-size: 62.5%;
 }
 html body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   position: relative;
-  background: linear-gradient(112.93deg, rgba(0, 0, 0, 0.7) 0%, #060606 98.66%),
-    rgba(255, 255, 255, 0.3);
+  background: linear-gradient(112.93deg, rgba(0, 0, 0, 0.7) 0%, #060606 98.66%), rgba(255, 255, 255, 0.3);
   background-repeat: no-repeat;
 }
 
@@ -321,37 +302,42 @@ html body {
   color: #e8e8e8;
   text-transform: uppercase;
 }
-.header input[type='search']::-webkit-search-decoration,
-.header input[type='search']::-webkit-search-cancel-button,
-.header input[type='search']::-webkit-search-results-button,
-.header input[type='search']::-webkit-search-results-decoration {
+.header input[type=search]::-webkit-search-decoration,
+.header input[type=search]::-webkit-search-cancel-button,
+.header input[type=search]::-webkit-search-results-button,
+.header input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
 .projects,
-.posts {
+.posts,
+.contact {
   padding-top: 3rem;
   padding-bottom: 1rem;
   position: relative;
 }
 .projects .shape svg,
-.posts .shape svg {
+.posts .shape svg,
+.contact .shape svg {
   position: absolute;
   width: 325px !important;
   z-index: -2;
 }
 .projects .shape-2 svg,
-.posts .shape-2 svg {
+.posts .shape-2 svg,
+.contact .shape-2 svg {
   left: 2.4rem;
   top: -4rem;
 }
 .projects .shape-3 svg,
-.posts .shape-3 svg {
+.posts .shape-3 svg,
+.contact .shape-3 svg {
   right: 2.4rem;
   top: 24rem;
 }
 .projects .shape-4 svg,
-.posts .shape-4 svg {
+.posts .shape-4 svg,
+.contact .shape-4 svg {
   left: 1.4rem;
   bottom: -9rem;
 }
@@ -359,34 +345,98 @@ html body {
 .show-more svg {
   -webkit-animation: show 1s infinite;
   animation: show 1s infinite;
+  position: absolute;
 }
 
 @-webkit-keyframes show {
   0% {
     opacity: 0.5;
+    margin-top: 1rem;
   }
   100% {
     opacity: 1;
+    margin-top: 0;
   }
+}
+.computer {
+  text-align: center;
+  max-width: 76rem;
+  margin: auto;
+  height: 44.2rem;
+  background: rgba(164, 164, 164, 0.2);
+  border: 2px solid #e8e8e8;
+  padding-top: 9rem;
+  padding-bottom: 6rem;
+}
+.computer .availblity {
+  font-size: 1.6rem;
+  font-weight: 200;
+  color: rgb(164, 164, 164);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.computer .availblity .available {
+  color: #fff;
+}
+.computer .time {
+  max-width: 35%;
+  margin: auto;
+  font-size: 6.4rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 6rem;
 }
 
-@keyframes show {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+.computer-shape {
+  position: relative;
+  max-width: 24rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-clip-path: polygon(10% 25%, 20% 25%, 20% 0, 80% 0, 80% 24%, 90% 24%, 90% 40%, 65% 40%, 35% 40%, 10% 40%);
+  clip-path: polygon(10% 25%, 20% 25%, 20% 0, 80% 0, 80% 24%, 90% 24%, 90% 40%, 65% 40%, 35% 40%, 10% 40%);
+  margin: auto;
+  margin-top: -2px;
 }
+.computer-shape div {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 5px;
+  background: rgba(155, 155, 155, 0.59);
+  -webkit-clip-path: polygon(10% 25%, 20% 25%, 20% 0, 80% 0, 80% 24%, 90% 24%, 90% 40%, 65% 40%, 35% 40%, 10% 40%);
+  clip-path: polygon(10% 25%, 20% 25%, 20% 0, 80% 0, 80% 24%, 90% 24%, 90% 40%, 65% 40%, 35% 40%, 10% 40%);
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.2rem;
+}
+.social-media .social-media__link {
+  background-color: black;
+  text-decoration: none;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+}
+
 footer {
   padding: 4rem 0;
 }
 
 .background {
-  background: url('../images/Rectangle.png');
+  background: url("../images/Rectangle.png");
   height: 100%;
   width: 100%;
   position: absolute;
   opacity: 0.5;
   z-index: -3;
 }
+
+/*# sourceMappingURL=main.css.map */
