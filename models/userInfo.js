@@ -37,6 +37,10 @@ const userInfoSchema = mongoose.Schema({
     title: {
         type: String,
         required: [true, "Please tell us your position"]
+    },
+    available: {
+        type: Boolean,
+        default: false
     }
 }, {
     timestamps: true
@@ -49,6 +53,9 @@ const userInfoSchema = mongoose.Schema({
 
 userInfoSchema.pre('save', async function (next) {
     // Hash the password with cost of 12
+    let user = this;
+
+    if (!user.isModified('password')) return next();
     this.password = await bcrypt.hash(this.password, 12);
     next()
 })

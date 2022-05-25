@@ -57,3 +57,14 @@ exports.deletePost = catchAsync(async (req, res, next) => {
         data: null
     })
 })
+
+exports.search = catchAsync(async (req, res, next) => {
+    const searchQuery = req.params.query;
+    const limited = req.query.limit * 1 || 4
+    
+    const posts = await Post.find({$text: {$search: searchQuery}}).limit(limited)
+    res.status(200).json({
+        status: 'success',
+        data: posts
+    })
+})
