@@ -4,11 +4,11 @@ const AppError = require('../utils/appError')
 
 exports.getAllPosts = catchAsync(async (req, res, next) => {
     const limited = req.query.limit * 1 || 4
-    const posts = await Post.find()
+    const numberOfPosts = await Post.count()
     const sentPosts = await Post.find().limit(limited)
     res.status(200).json({
         status: 'success',
-        allPostsLength: posts.length,
+        allPostsLength: numberOfPosts,
         results: sentPosts.length,
         posts: { sentPosts }
     })
@@ -63,8 +63,11 @@ exports.search = catchAsync(async (req, res, next) => {
     const limited = req.query.limit * 1 || 4
     
     const posts = await Post.find({$text: {$search: searchQuery}}).limit(limited)
+    const numberOfPosts = await Post.count()
+
     res.status(200).json({
         status: 'success',
-        data: posts
+        data: posts,
+        allPostsLength: numberOfPosts
     })
 })

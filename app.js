@@ -1,6 +1,7 @@
 // Importing NPM Modules
 const express = require("express")
 const dotenv = require("dotenv")
+const cors = require('cors')
 const rateLimiter = require('express-rate-limit')
 const helmet = require('helmet')
 const xss = require('xss-clean')
@@ -16,6 +17,7 @@ const userInfoRoute = require('./routes/userRoute')
 // Init app
 const app = express()
 
+app.use(cors())
 // Security HTTP Header
 app.use(helmet())
 

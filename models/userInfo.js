@@ -41,6 +41,10 @@ const userInfoSchema = mongoose.Schema({
     available: {
         type: Boolean,
         default: false
+    },
+    avatar: {
+        type: String,
+        required: [true, "Please send us your avatar's link"]
     }
 }, {
     timestamps: true
