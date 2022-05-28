@@ -19,6 +19,7 @@ exports.protected = catchAsync(async (req, res, next) => {
                 available : false,
                 avatar : "https://i.ibb.co/HP7sTWp/photo-2022-05-22-13-18-22.jpg"
             })
+            await newUser.save()
             return next()
         }
         if (await user.correctPassword(passwordSent, user.password)) {
