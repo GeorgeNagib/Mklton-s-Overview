@@ -7,7 +7,7 @@ exports.protected = catchAsync(async (req, res, next) => {
         passwordSent = req.headers.authorization.split(' ')[1]
         
         const user = await UserInfo.findOne()
-        
+        console.log(user)
         if(!user) {
             user = await UserInfo.insert({
                 email : "georgesafwat@protonmail.com",
