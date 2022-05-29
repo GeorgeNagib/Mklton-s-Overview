@@ -35,8 +35,8 @@ export default function Posts({searchString}) {
                 />
               </svg>
             </div>
-            {data?.posts?.sentPosts?.map(({_id, title, body, createdAt}) => (
-              <Post key={_id} title={title} body={body} createdAt={createdAt}></Post>
+            {data?.posts?.sentPosts?.map(({_id, title, body, createdAt, url}) => (
+              <Post key={_id} title={title} body={body} createdAt={createdAt} url={url}></Post>
             ))}
             
             <div className="shape shape-3">
