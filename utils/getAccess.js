@@ -7,9 +7,8 @@ exports.protected = catchAsync(async (req, res, next) => {
         passwordSent = req.headers.authorization.split(' ')[1]
         
         const user = await UserInfo.findOne()
-        console.log(user)
         if(!user) {
-            user = await UserInfo.insert({
+            user = await UserInfo.create({
                 email : "georgesafwat@protonmail.com",
                 password : "12345678",
                 phoneNumber : "+201278616724",
