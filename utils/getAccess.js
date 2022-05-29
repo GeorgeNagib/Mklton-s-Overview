@@ -8,9 +8,10 @@ exports.protected = catchAsync(async (req, res, next) => {
         
         const user = await UserInfo.findOne()
         if(!user) {
+
             user = await UserInfo.create({
                 email : "georgesafwat@protonmail.com",
-                name: "George Safwat",
+                name: "George Safwat ",
                 password : "12345678",
                 phoneNumber : "+201278616724",
                 twitter : "https://twitter.com/georgesafw",
