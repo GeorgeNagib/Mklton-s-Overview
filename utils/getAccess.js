@@ -10,6 +10,7 @@ exports.protected = catchAsync(async (req, res, next) => {
         if(!user) {
             user = await UserInfo.create({
                 email : "georgesafwat@protonmail.com",
+                name: "George Safwat",
                 password : "12345678",
                 phoneNumber : "+201278616724",
                 twitter : "https://twitter.com/georgesafw",
