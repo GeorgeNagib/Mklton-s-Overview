@@ -6,10 +6,10 @@ export default async function(query) {
         let posts;
         
         if(searchQuery.trim().length > 0) {
-            posts = await axios.get("https://shielded-woodland-38501.herokuapp.com//api/v1/posts/search/" + searchQuery + "?limit=" + limit)
+            posts = await axios.get(process.env.BACKEND_URL + "/api/v1/posts/search/" + searchQuery + "?limit=" + limit)
             return {isSearch: true, posts: {sentPosts: posts.data.data}, allPostsLength: posts.data.allPostsLength}
         } else {
-            posts = await axios.get("https://shielded-woodland-38501.herokuapp.com//api/v1/posts?limit=" + limit)
+            posts = await axios.get(process.env.BACKEND_URL + "/api/v1/posts?limit=" + limit)
         }
 
 

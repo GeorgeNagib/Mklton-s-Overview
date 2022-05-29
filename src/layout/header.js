@@ -5,9 +5,6 @@ import userInfo from '../services/userInfo'
 import axios from 'axios'
 export default function Header() {
 
-    
-  
-  
     // Queries
     const { isLoading, isError, data, error } = useQuery('todos', userInfo)
     
