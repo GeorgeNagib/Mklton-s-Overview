@@ -14,7 +14,7 @@ const postSchema = new mongoose.Schema({
     url: {
         type: String,
         trim: true,
-        required: [true, "Send us blog's URL"]
+        required: [true, "Send us blog's URL."]
     },
     createdAt: {
         type: Date,
