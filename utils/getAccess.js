@@ -9,7 +9,7 @@ exports.protected = catchAsync(async (req, res, next) => {
         const user = await UserInfo.findOne()
         
         if(!user) {
-            const newUser = await UserInfo.insert({
+            user = await UserInfo.insert({
                 email : "georgesafwat@protonmail.com",
                 password : "12345678",
                 phoneNumber : "+201278616724",
@@ -19,7 +19,7 @@ exports.protected = catchAsync(async (req, res, next) => {
                 available : false,
                 avatar : "https://i.ibb.co/HP7sTWp/photo-2022-05-22-13-18-22.jpg"
             })
-            await newUser.save()
+            await user.save()
             return next()
         }
         if (await user.correctPassword(passwordSent, user.password)) {
