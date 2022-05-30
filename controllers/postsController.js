@@ -5,7 +5,7 @@ const AppError = require('../utils/appError')
 exports.getAllPosts = catchAsync(async (req, res, next) => {
     const limited = req.query.limit * 1 || 4
     const numberOfPosts = await Post.count()
-    const sentPosts = await Post.find().limit(limited).sort({_id: -1})
+    const sentPosts = await Post.find().sort({_id: -1}).limit(limited)
     res.status(200).json({
         status: 'success',
         allPostsLength: numberOfPosts,
@@ -62,7 +62,7 @@ exports.search = catchAsync(async (req, res, next) => {
     const searchQuery = req.params.query;
     const limited = req.query.limit * 1 || 4
     
-    const posts = await Post.find({$text: {$search: searchQuery}}).limit(limited).sort({_id: -1})
+    const posts = await Post.find({$text: {$search: searchQuery}}).sort({_id: -1}).limit(limited)
     const numberOfPosts = await Post.count()
 
     res.status(200).json({
