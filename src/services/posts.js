@@ -6,10 +6,10 @@ export default async function(query) {
         let posts;
 
         if(searchQuery.trim().length > 0) {
-            posts = await axios.get("https://mklton-s-overview-backend-dik1khtf1-george-safwat.vercel.app/api/v1/posts/search/" + searchQuery + "?limit=" + limit)
+            posts = await axios.get("https://mklton-s-overview-backend-ikremdw3g-george-safwat.vercel.app/api/v1/posts/search/" + searchQuery + "?limit=" + limit)
             return {isSearch: true, posts: {sentPosts: posts.data.data}, allPostsLength: posts.data.allPostsLength}
         } else {
-            posts = await axios.get("https://mklton-s-overview-backend-dik1khtf1-george-safwat.vercel.app/api/v1/posts?limit=" + limit)
+            posts = await axios.get("https://mklton-s-overview-backend-ikremdw3g-george-safwat.vercel.app/api/v1/posts?limit=" + limit)
         }
 
 
