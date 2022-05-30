@@ -40,8 +40,8 @@ export default function BlogHeader({setSearchString}) {
                 />
               </svg>
             </div>
-            <form action="#">
-              <div className="form-group">
+            <form>
+              <div className="form-group" onSubmit={(e) => e.preventDefault()}>
                 <input
                   onChange={(el) => setSearchString(el.target.value)}
                   type="search"
