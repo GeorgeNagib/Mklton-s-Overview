@@ -6,7 +6,7 @@ exports.getAllProjects = catchAsync(async (req, res, next) => {
     const limited = req.query.limit * 1 || 4
 
     const numberOfProjects = await Project.count()
-    const sentProjects = await Project.find().limit(limited)
+    const sentProjects = await Project.find().limit(limited).sort({_id: -1})
 
     res.status(200).json({
         status: 'success',
