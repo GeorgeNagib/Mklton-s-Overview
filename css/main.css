@@ -143,7 +143,7 @@ img {
   font-weight: 700;
   font-size: 6.4rem;
 }
-@media only screen and (min-width: 50em) and (max-width: 82.1875em) {
+@media only screen and (min-width: 50em) and (max-width: 75em) {
   .title h1 {
     font-size: 5.5rem;
   }
@@ -296,10 +296,10 @@ html body {
 }
 
 .container {
-  max-width: 116rem;
+  max-width: 112rem;
   margin-inline: auto;
 }
-@media only screen and (min-width: 50em) and (max-width: 82.1875em) {
+@media only screen and (min-width: 50em) and (max-width: 75em) {
   .container {
     padding: 0 2rem;
   }
@@ -377,7 +377,7 @@ html body {
   height: 26.1rem;
   border-radius: 50%;
 }
-@media only screen and (min-width: 50em) and (max-width: 82.1875em) {
+@media only screen and (min-width: 50em) and (max-width:75em) {
   .header__person .profile {
     width: 25rem;
     height: auto;
@@ -403,12 +403,12 @@ html body {
   top: -12.4rem;
   z-index: -2;
 }
-@media only screen and (min-width: 82.1875em) and (max-width: 112.5em) {
+@media only screen and (min-width: 75em) and (max-width: 112.5em) {
   .header .shape-1 svg {
     right: 0;
   }
 }
-@media only screen and (min-width: 50em) and (max-width: 82.1875em) {
+@media only screen and (min-width: 50em) and (max-width: 75em) {
   .header .shape-1 svg {
     right: 0;
   }
