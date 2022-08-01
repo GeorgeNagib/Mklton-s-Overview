@@ -4,6 +4,7 @@ const AppError = require('../utils/appError')
 const UserInfo = require('../models/userInfo')
 
 exports.updateUser = catchAsync(async (req, res, next) => {
+    res.status(200).json({})
     let user = await UserInfo.findOne()
     console.log(user)
     if(user) {
