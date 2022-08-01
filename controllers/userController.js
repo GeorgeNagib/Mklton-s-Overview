@@ -5,12 +5,14 @@ const UserInfo = require('../models/userInfo')
 
 exports.updateUser = catchAsync(async (req, res, next) => {
     let user = await UserInfo.findOne()
+    console.log(user)
     if(user) {
         for(let propertyName in req.body) {
             user[propertyName] = req.body[propertyName]
         }
     } else {
         user = new UserInfo(req.body)
+        console.log(user)
     }
     await user.save()
     res.status(200).json({
