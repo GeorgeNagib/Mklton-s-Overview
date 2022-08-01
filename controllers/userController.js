@@ -9,10 +9,10 @@ exports.updateUser = catchAsync(async (req, res, next) => {
         for(let propertyName in req.body) {
             user[propertyName] = req.body[propertyName]
         }
-        await user.save()
     } else {
-        var user = new UserInfo.new(req.body)
+        user = new UserInfo.new(req.body)
     }
+    await user.save()
     res.status(200).json({
         status: 'success',
         data: {
