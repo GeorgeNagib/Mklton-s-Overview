@@ -10,7 +10,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
             user[propertyName] = req.body[propertyName]
         }
     } else {
-        user = new UserInfo.new(req.body)
+        user = new UserInfo(req.body)
     }
     await user.save()
     res.status(200).json({
